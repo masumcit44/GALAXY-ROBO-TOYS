@@ -3,6 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ActionCard from "../CategoryCard/ActionCard";
 
+
+
+
 const ActionFigures = () => {
   const [actionFigures, setActionFigures] = useState([]);
   useEffect(() => {
@@ -14,18 +17,13 @@ const ActionFigures = () => {
         setActionFigures(data);
       });
   }, []);
-  const {_id  } = actionFigures;
+  const { _id } = actionFigures;
   return (
-    <div>
-      <div className="md:grid grid-cols-2 w-3/4 mx-auto">
-        {
-            actionFigures.map(card=><ActionCard
-            key={card._id}
-            card={card}
-            ></ActionCard>)
-        }
+      <div className="md:grid grid-cols-2 gap-3 w-3/4 mx-auto">
+        {actionFigures.map((card) => (
+          <ActionCard key={card._id} card={card}></ActionCard>
+        ))}
       </div>
-    </div>
   );
 };
 
