@@ -11,6 +11,9 @@ import Login from './components/layout/Login/Login';
 import Register from './components/layout/Login/Register';
 import ErrorPage from './components/pages/ErrorPage/ErrorPage';
 import Home from './components/pages/Home/Home';
+import ActionFigures from './components/pages/ShopByCatagory/Catagory/CategoryNames/ActionFigures';
+import RemoteControl from './components/pages/ShopByCatagory/Catagory/CategoryNames/RemoteControl';
+import BuildingSets from './components/pages/ShopByCatagory/Catagory/CategoryNames/BuildingSets';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,18 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element: <Register></Register>
+      },
+      {
+        path:'/ActionFigures',
+        element: <ActionFigures></ActionFigures>
+      },
+      {
+        path:'/RemoteControl',
+        element: <RemoteControl></RemoteControl>
+      },
+      {
+        path:'/BuildingSets',
+        element: <BuildingSets></BuildingSets>
       },
     ]
   }

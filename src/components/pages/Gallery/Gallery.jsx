@@ -9,7 +9,6 @@ const Gallery = () => {
         fetch('http://localhost:5000/catagoryrobo')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
             setGallery(data)
         })
     },[])
