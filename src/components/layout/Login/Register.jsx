@@ -86,7 +86,7 @@ const Register = () => {
               className="input input-bordered"
             />
             <p className="text-end my-2">
-              alread have an account?{" "}
+              already have an account?{" "}
               <Link to="/login" className="text-orange-600 ">
                 Sign In{" "}
               </Link>
