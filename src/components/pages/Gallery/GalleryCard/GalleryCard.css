@@ -1,0 +1,9 @@
+.gallery-img{
+    width: 100vw;
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Adjust the gradient colors and transparency as needed */
+
+}
+
+.gallery-card{
+}

@@ -76,7 +76,7 @@ const Navbar = () => {
         {user ? (
           <>
             <div className=" avatar online ">
-              <div className="w-10 rounded-full ring ring-slate-400">
+              <div className="w-10 rounded-full ">
                 <img src={user?.photoURL} />
               </div>
             </div>
