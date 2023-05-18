@@ -5,12 +5,16 @@ import {
   FaInstagram,
   FaYoutube,
   FaSms,
+  FaFortAwesomeAlt,
 } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="md:flex justify-between p-5 footer bg-gradient-to-r from-purple-900 to-red-600 text-white nav-design">
+    <div className="md:flex justify-between p-5 footer bg-gradient-to-r from-purple-500 to-red-600 text-white nav-design">
       <div>
-        <h2 className="text-2xl text-teal-300">ToyGalaxy</h2>
+        <div className="text-2xl flex items-center text-black">
+          <FaFortAwesomeAlt></FaFortAwesomeAlt>
+          <p className="ms-2">GALAXY ROBO TOYS</p>
+        </div>
         <ul className="ps-2 flex gap-2 text-xl">
           <li>
             <FaFacebook></FaFacebook>
@@ -37,9 +41,9 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <h2 className="text-2xl">ToyGalaxy</h2>
+        <h2 className="text-2xl">GALAXY ROBO TOYS</h2>
         <ul className="ps-2">
-          <li>about toy galaxy</li>
+          <li>about GALAXY ROBO TOYS</li>
           <li>careers</li>
           <li>license</li>
           <li>our goals</li>
@@ -48,7 +52,7 @@ const Footer = () => {
       <div>
         <div className="flex items-center text-2xl gap-1 ">
           <FaSms></FaSms>
-          <p>Stay up to date with ToyGalaxy</p>
+          <p>Stay up to date with GALAXY ROBO TOYS</p>
         </div>
         <div className="flex items-center">
           <input

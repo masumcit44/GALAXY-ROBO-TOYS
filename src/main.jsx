@@ -10,6 +10,7 @@ import AuthProvider from './components/provider/AuthProvider';
 import Login from './components/layout/Login/Login';
 import Register from './components/layout/Login/Register';
 import ErrorPage from './components/pages/ErrorPage/ErrorPage';
+import Home from './components/pages/Home/Home';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     element:<Main></Main>,
     errorElement: <ErrorPage></ErrorPage>,
     children:[
+      {
+        path:'/',
+        element: <Home></Home>
+      },
       {
         path:'/login',
         element: <Login></Login>

@@ -44,8 +44,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case  font-bold text-2xl">
-        <FaFortAwesomeAlt></FaFortAwesomeAlt> <p className="ms-2">ToyGalaxy</p> </a>
+        <a className="btn btn-ghost normal-case  font-bold md:text-2xl">
+        <FaFortAwesomeAlt></FaFortAwesomeAlt> <p className="ms-2">GALAXY ROBO TOYS</p> </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-xl">
