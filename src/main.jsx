@@ -14,6 +14,7 @@ import Home from './components/pages/Home/Home';
 import ActionFigures from './components/pages/ShopByCatagory/Catagory/CategoryNames/ActionFigures';
 import RemoteControl from './components/pages/ShopByCatagory/Catagory/CategoryNames/RemoteControl';
 import BuildingSets from './components/pages/ShopByCatagory/Catagory/CategoryNames/BuildingSets';
+import Blog from './components/pages/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element: <Login></Login>
+      },
+      {
+        path:'/blog',
+        element: <Blog></Blog>
       },
       {
         path:'/register',
