@@ -1,6 +1,6 @@
 import React from "react";
 import { FaEdit } from "react-icons/fa";
-const ToyCard = ({ mytoy , handleDelete}) => {
+const ToyCard = ({ mytoy, handleDelete, handleUpdate }) => {
   const { _id, category, name, price, quantity, sellerName, image } = mytoy;
   return (
     <tr className="font-bold text-base ">
@@ -15,10 +15,18 @@ const ToyCard = ({ mytoy , handleDelete}) => {
       <td className="text-red-500 bg-green-300">${price}</td>
       <td className="text-green-900 ">{quantity}</td>
       <td className=" ">
-        <button className="btn btn-outline mr-2  btn-info">
+        <label
+          htmlFor="my-modal-6"
+          onClick={() => handleUpdate(_id)}
+          className="btn btn-outline mr-2  btn-info"
+        >
           <FaEdit></FaEdit>
-        </button>
-        <button onClick={()=>handleDelete(_id)} className="btn btn-outline w-12 bg-red-600 text-red-100 btn-circle">
+        </label>
+
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-outline w-12 bg-red-600 text-red-100 btn-circle"
+        >
           x
         </button>
       </td>

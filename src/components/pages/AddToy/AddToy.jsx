@@ -15,6 +15,7 @@ const AddToy = () => {
     const Rating = form.Rating.value;
     const detail = form.detail.value;
     const url = form.url.value;
+    const quantity = form.quantity.value;
 
     console.log(url, name, seller, email, category, price, Rating, detail);
     const toy = {
@@ -26,6 +27,7 @@ const AddToy = () => {
       price,
       Rating,
       detail,
+      quantity
     };
 
     fetch("http://localhost:5000/allToys", {

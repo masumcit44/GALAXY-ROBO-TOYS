@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const [mytoys, setMyToys] = useState([]);
   const { user } = useContext(AuthContext);
+  const [showModal, setShowModal] = useState(false);
+  const [updateId, setUpdateId] = useState(null);
   //   console.log(user?.email);
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -57,6 +59,54 @@ const MyToys = () => {
         }
       });
   };
+  const handleUpdate = (id) => {
+    setShowModal(true);
+    setUpdateId(id);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const price = form.price.value;
+    const detail = form.detail.value;
+    const quantity = form.quantity.value;
+
+    console.log(price, quantity, detail);
+    const toy = {
+      price,
+      detail,
+      quantity,
+    };
+
+    fetch(`http://localhost:5000/allToys/${updateId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const updated = mytoys.find((toy) => toy._id == updateId);
+        const remaining = mytoys.filter((toy) => toy._id != updateId);
+        const updatedToy = [updated, ...remaining];
+        updated.price=price
+        updated.detail=detail
+        updated.quantity=quantity
+        if (data.modifiedCount > 0) {
+          setMyToys(updatedToy);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setShowModal(false);
+        }
+      });
+  };
 
   if (!user) {
     return <progress className="progress w-56"></progress>;
@@ -81,10 +131,68 @@ const MyToys = () => {
               key={mytoy._id}
               mytoy={mytoy}
               handleDelete={handleDelete}
+              handleUpdate={handleUpdate}
             ></ToyCard>
           ))}
         </tbody>
       </table>
+      {showModal && (
+        <>
+          <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+          <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
+              <form onSubmit={handleSubmit} className="">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">update Price of toy</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="$"
+                    name="price"
+                    className="input input-bordered"
+                  />
+                </div>
+
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Available quantity</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Available quantity"
+                    name="quantity"
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Detail description</span>
+                  </label>
+                  <textarea
+                    type="text"
+                    placeholder="Detail description"
+                    name="detail"
+                    className="input input-bordered resize-none"
+                    rows={60}
+                  />
+                </div>
+                <div className="form-control my-4">
+                  <div className="form-control my-4">
+                    <input
+                      type="submit"
+                      htmlFor="my-modal-6"
+                      className="btn"
+                      value="Yay!"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div className="modal-action"></div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
