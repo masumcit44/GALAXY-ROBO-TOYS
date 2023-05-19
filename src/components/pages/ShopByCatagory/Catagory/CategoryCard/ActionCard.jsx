@@ -33,7 +33,7 @@ const ActionCard = ({ card }) => {
         </div>
         <div className="card-actions justify-end">
           {user ? (
-            <Link to="/toydetails">
+            <Link to={`/toydetails/${_id}`}>
               <button className="btn btn-primary">View Details button</button>
             </Link>
           ) : (

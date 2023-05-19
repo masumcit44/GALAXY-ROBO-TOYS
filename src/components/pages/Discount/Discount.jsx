@@ -8,7 +8,6 @@ const Discount = () => {
         fetch('http://localhost:5000/discount')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
             setDiscount(data)
         })
     },[])

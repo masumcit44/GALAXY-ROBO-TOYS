@@ -6,7 +6,7 @@ import ActionCard from "../CategoryCard/ActionCard";
 const RemoteControl = () => {
   const [RemoteControl, setRemoteControl] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/catagoryrobo?category=RemoteControl";
+    const url = "http://localhost:5000/alltoys?category=RemoteControl";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

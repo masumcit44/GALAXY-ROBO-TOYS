@@ -5,7 +5,7 @@ import ActionCard from "../CategoryCard/ActionCard";
 const BuildingSets = () => {
     const [BuildingSets, setBuildingSets] = useState([]);
     useEffect(() => {
-      const url = "http://localhost:5000/catagoryrobo?category=BuildingSets";
+      const url = "http://localhost:5000/alltoys?category=BuildingSets";
       fetch(url)
         .then((res) => res.json())
         .then((data) => {

@@ -9,10 +9,11 @@ import ActionCard from "../CategoryCard/ActionCard";
 const ActionFigures = () => {
   const [actionFigures, setActionFigures] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/catagoryrobo?category=ActionFigures";
+    const url = "http://localhost:5000/alltoys?category=ActionFigures";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setActionFigures(data);
       });
   }, []);
