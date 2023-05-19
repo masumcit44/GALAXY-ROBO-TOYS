@@ -7,7 +7,8 @@ import SwiperCore, { EffectCards, Autoplay } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Brand.css'
 // import required modules
 

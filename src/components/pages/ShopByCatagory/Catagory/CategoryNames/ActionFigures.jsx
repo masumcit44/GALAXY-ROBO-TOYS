@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import ActionCard from "../CategoryCard/ActionCard";
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -11,7 +12,10 @@ const ActionFigures = () => {
   useEffect(() => {
     const url = "http://localhost:5000/alltoys?category=ActionFigures";
     fetch(url)
-      .then((res) => res.json())
+    .then(res=>{
+      
+      return res.json();
+    })
       .then((data) => {
         setActionFigures(data);
       });
@@ -22,6 +26,7 @@ const ActionFigures = () => {
         {actionFigures.map((card) => (
           <ActionCard key={card._id} card={card}></ActionCard>
         ))}
+        <ToastContainer />
       </div>
   );
 };

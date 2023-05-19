@@ -1,13 +1,18 @@
 
 import React, { useEffect, useState } from "react";
 import AllToyCard from "./ToysCard/AllToyCard";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     fetch("http://localhost:5000/alltoys?limit=20")
-      .then((res) => res.json())
+      .then((res) => {
+        toast.info('Loading toys...', { autoClose: 1000 });
+        return res.json();
+      })
       .then((data) => {
         setToys(data);
       });
@@ -47,6 +52,7 @@ const AllToys = () => {
           ))}
         </tbody>
       </table>
+      <ToastContainer />
     </div>
   );
 };

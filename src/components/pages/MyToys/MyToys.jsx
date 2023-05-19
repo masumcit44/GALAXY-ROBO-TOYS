@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import ToyCard from "./ToyCard/ToyCard";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const MyToys = () => {
   const [mytoys, setMyToys] = useState([]);
   const { user } = useContext(AuthContext);
@@ -17,11 +19,18 @@ const MyToys = () => {
   });
   useEffect(() => {
     fetch(`http://localhost:5000/alltoys?email=${user?.email}`)
-      .then((res) => res.json())
+      .then((res) => {
+        toast.info("Loading your toys...",{ autoClose: 2000 }); // Show the spinner
+        return res.json();
+      })
       .then((data) => {
         if (user) {
           setMyToys(data);
         }
+      })
+      .catch((error) => {
+        toast.error("Error fetching toys."); // Show error message if there's an error
+        console.error(error);
       });
   }, [user]);
 
@@ -91,9 +100,9 @@ const MyToys = () => {
         const updated = mytoys.find((toy) => toy._id == updateId);
         const remaining = mytoys.filter((toy) => toy._id != updateId);
         const updatedToy = [updated, ...remaining];
-        updated.price=price
-        updated.detail=detail
-        updated.quantity=quantity
+        updated.price = price;
+        updated.detail = detail;
+        updated.quantity = quantity;
         if (data.modifiedCount > 0) {
           setMyToys(updatedToy);
           Swal.fire({
@@ -193,6 +202,7 @@ const MyToys = () => {
           </div>
         </>
       )}
+      <ToastContainer />
     </div>
   );
 };

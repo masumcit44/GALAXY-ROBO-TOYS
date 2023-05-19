@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import GalleryCard from '../GalleryCard/GalleryCard';
 
 import './Gallery.css'
@@ -8,7 +9,10 @@ const Gallery = () => {
     const [gallery,setGallery] = useState([])
     useEffect(()=>{
         fetch('http://localhost:5000/catagoryrobo')
-        .then(res=>res.json())
+        .then(res=>{
+            toast.info('Loading toys...', { autoClose: 1000 });
+            return res.json();
+          })
         .then(data=>{
             setGallery(data)
         })
@@ -24,6 +28,7 @@ const Gallery = () => {
                     ></GalleryCard>)
                 }
             </div>
+
         </div>
     );
 };

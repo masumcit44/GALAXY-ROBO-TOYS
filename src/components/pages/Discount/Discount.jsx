@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DiscountCard from './DiscountCard/DiscountCard';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Discount = () => {
 
     const [discount,setDiscount] = useState([])
@@ -23,6 +24,7 @@ const Discount = () => {
                 ></DiscountCard>)
             }
             </div>
+            <ToastContainer />
         </div>
     );
 };

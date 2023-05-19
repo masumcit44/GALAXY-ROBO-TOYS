@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ToyDetails = () => {
   const id = useParams().id;
   const [toy, setToy] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/alltoys/${id}`)
-      .then((res) => res.json())
+      .then((res) => {
+        toast.info("Loading toy details...", { autoClose: 1000 });
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
         setToy(data);
@@ -39,9 +44,7 @@ const ToyDetails = () => {
               price :<span className="text-3xl text-red-600">${price}</span>
             </p>
             <div className="flex items-center">
-              <p>
-              rating :{" "}
-              </p>
+              <p>rating : </p>
               <Rating
                 disabled
                 style={{ maxWidth: 150 }}
@@ -58,6 +61,7 @@ const ToyDetails = () => {
           <button className="btn btn-primary my-2">add to cart</button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

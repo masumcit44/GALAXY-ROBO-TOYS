@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddToy = () => {
   const { user } = useContext(AuthContext);
 
@@ -42,7 +44,7 @@ const AddToy = () => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire({
-            position: "top-start",
+            position: "top-right",
             icon: "success",
             title: "Toy has been added",
             showConfirmButton: false,
@@ -161,6 +163,7 @@ const AddToy = () => {
           <input type="submit" className="btn btn-info" value="submit" />
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
