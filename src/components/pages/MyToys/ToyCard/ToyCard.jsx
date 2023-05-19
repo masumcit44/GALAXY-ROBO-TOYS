@@ -14,7 +14,7 @@ const ToyCard = ({ mytoy, handleDelete, handleUpdate }) => {
       <td>{category}</td>
       <td className="text-red-500 bg-green-300">${price}</td>
       <td className="text-green-900 ">{quantity}</td>
-      <td className=" ">
+      <td className=" flex justify-around mt-4 ">
         <label
           htmlFor="my-modal-6"
           onClick={() => handleUpdate(_id)}

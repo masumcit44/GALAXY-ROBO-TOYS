@@ -20,7 +20,7 @@ const MyToys = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/alltoys?email=${user?.email}`)
       .then((res) => {
-        toast.info("Loading your toys...",{ autoClose: 2000 }); // Show the spinner
+        toast.info("Loading your toys...", { autoClose: 2000 }); // Show the spinner
         return res.json();
       })
       .then((data) => {
@@ -120,8 +120,20 @@ const MyToys = () => {
   if (!user) {
     return <progress className="progress w-56"></progress>;
   }
+
+  const handleAccending = (sort) => {
+    fetch(`http://localhost:5000/mytoys?sort=${sort}&&email=${user?.email}`)
+      .then((res) => {
+        toast.info("Loading your toys...", { autoClose: 2000 }); // Show the spinner
+        return res.json();
+      })
+      .then((data) => {
+        setMyToys(data);
+      });
+  };
+
   return (
-    <div className="overflow-x-auto my-4">
+    <div className="overflow-x-auto my-4 ">
       <table className="table w-full">
         <thead>
           <tr className="bg-amber-100">
@@ -131,7 +143,20 @@ const MyToys = () => {
             <th>Sub-category</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th></th>
+            <th className="flex justify-around">
+              <button
+                onClick={() => handleAccending(1)}
+                className="btn btn-sm bg-purple-600 mr-2"
+              >
+                Ascending{" "}
+              </button>
+              <button
+                onClick={() => handleAccending(-1)}
+                className="btn bg-green-400 btn-sm"
+              >
+                Descending
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
