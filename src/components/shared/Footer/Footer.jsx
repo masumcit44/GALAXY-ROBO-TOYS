@@ -7,6 +7,7 @@ import {
   FaSms,
   FaFortAwesomeAlt,
 } from "react-icons/fa";
+import './Footer.css'
 const Footer = () => {
   return (
     <div className="md:flex justify-between p-5 footer bg-gradient-to-r from-purple-500 to-red-600 text-white nav-design">
@@ -50,7 +51,7 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <div className="flex items-center text-2xl gap-1 ">
+        <div className="flex items-center md:text-2xl gap-1 ">
           <FaSms></FaSms>
           <p className="text-black">Stay up to date with GALAXY ROBO TOYS</p>
         </div>

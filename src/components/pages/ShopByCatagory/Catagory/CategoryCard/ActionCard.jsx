@@ -5,6 +5,7 @@ import { AuthContext } from "../../../../provider/AuthProvider";
 import { Rating } from "@smastrom/react-rating";
 import Swal from "sweetalert2";
 import "@smastrom/react-rating/style.css";
+import './ActionCard.css'
 const ActionCard = ({ card }) => {
   const { _id, image, name, price, rating } = card;
   const { user } = useContext(AuthContext);
@@ -18,9 +19,9 @@ const ActionCard = ({ card }) => {
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card   card-container md:w-96 bg-base-100 shadow-xl">
       <figure>
-        <img className="h-80 w-full" src={image} alt="Shoes" />
+        <img className="h-80 action-img md:w-full" src={image} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>

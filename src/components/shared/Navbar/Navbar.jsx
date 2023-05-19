@@ -44,7 +44,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case  font-bold md:text-2xl">
+        <a className="btn btn-ghost nav-heading normal-case  font-bold md:text-2xl">
         <FaFortAwesomeAlt></FaFortAwesomeAlt> <p className="ms-2">GALAXY ROBO TOYS</p> </a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -72,7 +72,7 @@ const Navbar = () => {
          }
         </ul>
       </div>
-      <div className="navbar-end ">
+      <div className="navbar-end  ">
         {user ? (
           <>
             <div className=" avatar online ">
@@ -86,7 +86,7 @@ const Navbar = () => {
           </>
         ) : (
           <Link to="/login">
-            <button  className="btn btn-accent">Login</button>
+            <button  className="  btn btn-accent">Login</button>
           </Link>
         )}
       </div>

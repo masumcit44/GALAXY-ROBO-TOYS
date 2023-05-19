@@ -54,3 +54,9 @@ body {
   color: #fff;
 }
 
+@media (max-width:576px)  {
+    .swiper {
+        width: 50%;
+        height: 50%;
+      }
+}

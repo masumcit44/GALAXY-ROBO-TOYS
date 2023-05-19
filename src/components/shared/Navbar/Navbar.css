@@ -2,3 +2,14 @@
   font-family: "Bangers", cursive;
   font-family: "Darumadrop One", cursive;
 }
+
+@media (max-width:576px) {
+  .nav-btn{
+      padding: 0;
+      color: bisque;
+      font-size: 10px;
+  }
+  .nav-heading{
+      font-size: 10px;
+  }
+}

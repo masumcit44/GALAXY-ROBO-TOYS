@@ -1,0 +1,21 @@
+.img-container {
+    position: relative;
+}
+.discount-price{
+    position: absolute;
+    left: 6px;
+    top: 80px;
+}
+.discount-img{
+    width: 400px;
+    height: 400px;
+}
+
+.img-container{
+    transition: transform 0.3s ease;
+  }
+  
+  .img-container:hover {
+    transform: scale(1.1);
+  }
+

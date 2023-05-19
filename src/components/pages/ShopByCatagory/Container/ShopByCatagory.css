@@ -1,0 +1,5 @@
+@media (max-width: 576px) {
+  .responsive-tabs-container {
+    width: 100vw;
+  }
+}
