@@ -13,7 +13,7 @@ const ToyCard = ({ toy }) => {
       </td>
       <td className="nav-design text-2xl bg-amber-100">{name}</td>
       <td>{category}</td>
-      <td className="text-red-500 bg-green-300">{price}</td>
+      <td className="text-red-500 bg-green-300">${price}</td>
       <td className="text-green-900 ">{quantity}</td>
       <td>
         <Link to={`/toydetails/${_id}`}>
