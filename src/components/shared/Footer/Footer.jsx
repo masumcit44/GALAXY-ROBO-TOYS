@@ -31,7 +31,7 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <h2 className="text-2xl">Support</h2>
+        <h2 className="text-2xl text-black">Support</h2>
         <ul className="ps-2">
           <li>contact us</li>
           <li>FAQ</li>
@@ -41,7 +41,7 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <h2 className="text-2xl">GALAXY ROBO TOYS</h2>
+        <h2 className="text-2xl text-black">GALAXY ROBO TOYS</h2>
         <ul className="ps-2">
           <li>about GALAXY ROBO TOYS</li>
           <li>careers</li>
@@ -52,7 +52,7 @@ const Footer = () => {
       <div>
         <div className="flex items-center text-2xl gap-1 ">
           <FaSms></FaSms>
-          <p>Stay up to date with GALAXY ROBO TOYS</p>
+          <p className="text-black">Stay up to date with GALAXY ROBO TOYS</p>
         </div>
         <div className="flex items-center">
           <input

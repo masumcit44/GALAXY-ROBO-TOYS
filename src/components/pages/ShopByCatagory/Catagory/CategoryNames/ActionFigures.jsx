@@ -13,13 +13,12 @@ const ActionFigures = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setActionFigures(data);
       });
   }, []);
   const { _id } = actionFigures;
   return (
-      <div className="md:grid grid-cols-2 gap-3 w-3/4 mx-auto">
+      <div className="md:grid grid-cols-2 gap-3 md:w-3/4 md:mx-auto">
         {actionFigures.map((card) => (
           <ActionCard key={card._id} card={card}></ActionCard>
         ))}
