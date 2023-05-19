@@ -1,6 +1,6 @@
-import { handler } from "daisyui";
+
 import React, { useEffect, useState } from "react";
-import ToyCard from "./ToysCard/ToyCard";
+import AllToyCard from "./ToysCard/AllToyCard";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -43,7 +43,7 @@ const AllToys = () => {
         </thead>
         <tbody>
           {filteredToys.map((toy) => (
-            <ToyCard key={toy._id} toy={toy}></ToyCard>
+            <AllToyCard key={toy._id} toy={toy}></AllToyCard>
           ))}
         </tbody>
       </table>

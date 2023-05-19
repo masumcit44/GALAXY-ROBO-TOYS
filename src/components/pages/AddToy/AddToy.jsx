@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-
+import Swal from "sweetalert2";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
 
-  const handleSubmit = (event) =>{
-    event.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const seller = form.seller.value;
@@ -16,25 +16,40 @@ const AddToy = () => {
     const detail = form.detail.value;
     const url = form.url.value;
 
-    console.log(url,name,seller,email,category,price,Rating,detail);
+    console.log(url, name, seller, email, category, price, Rating, detail);
     const toy = {
-        url,name,seller,email,category,price,Rating,detail
-    }
-    
-    fetch('http://localhost:5000/allToys',{
-        method : "POST",
-        headers : {
-            'content-type' : 'application/json'
-        },
-        body : JSON.stringify(toy)
+      url,
+      name,
+      seller,
+      email,
+      category,
+      price,
+      Rating,
+      detail,
+    };
+
+    fetch("http://localhost:5000/allToys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toy),
     })
-    .then(res=>res.json())
-    .then(data=>{
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-    })
-    
-  }
-  
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-start",
+            icon: "success",
+            title: "Toy has been added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
   return (
     <div className="w-2/4 mx-auto bg-amber-200 rounded-sm p-10 my-4">
       <form onSubmit={handleSubmit} className="">
@@ -89,10 +104,7 @@ const AddToy = () => {
           <label className="label">
             <span className="label-text">Sub-category </span>
           </label>
-          <select
-            name="category"
-            className="select select-bordered"
-          >
+          <select name="category" className="select select-bordered">
             <option value="ActionFigures">ActionFigures</option>
             <option value="RemoteControl">RemoteControl</option>
             <option value="BuildingSets">BuildingSets</option>

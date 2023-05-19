@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-const ToyCard = ({ toy }) => {
-  const { _id, category, name, price, quantity, sellerName ,image } = toy;
+import { FaEdit } from "react-icons/fa";
+const ToyCard = ({ mytoy , handleDelete}) => {
+  const { _id, category, name, price, quantity, sellerName, image } = mytoy;
   return (
     <tr className="font-bold text-base ">
       <td>{sellerName}</td>
@@ -15,10 +14,13 @@ const ToyCard = ({ toy }) => {
       <td>{category}</td>
       <td className="text-red-500 bg-green-300">${price}</td>
       <td className="text-green-900 ">{quantity}</td>
-      <td>
-        <Link to={`/toydetails/${_id}`}>
-        <button className="btn btn-outline  btn-info">View Details</button>
-        </Link>
+      <td className=" ">
+        <button className="btn btn-outline mr-2  btn-info">
+          <FaEdit></FaEdit>
+        </button>
+        <button onClick={()=>handleDelete(_id)} className="btn btn-outline w-12 bg-red-600 text-red-100 btn-circle">
+          x
+        </button>
       </td>
     </tr>
   );
