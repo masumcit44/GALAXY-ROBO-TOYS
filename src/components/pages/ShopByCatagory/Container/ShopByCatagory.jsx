@@ -5,6 +5,7 @@ import RemoteControl from "../Catagory/CategoryNames/RemoteControl";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import './ShopByCatagory.css'
+
 const ShopByCatagory = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -13,13 +14,13 @@ const ShopByCatagory = () => {
   };
 
   return (
-    <div className="nav-design my-4 responsive-tabs-container">
+    <div className="nav-design my-8 responsive-tabs-container   ">
       <h2 className="text-center md:text-6xl mb-2">
-        Shop By <span className="text-orange-500">ROBO</span> Category
+        Shop By <span className="text-orange-500 ">ROBO</span> Category
       </h2>
-      <div className=" ">
+      <div className="">
         <Tabs selectedIndex={activeTab} onSelect={handleTabClick}>
-          <TabList>
+          <TabList className="text-3xl my-8 py-2 px-2 bg-blue-300">
             <Tab>ActionFigures</Tab>
             <Tab>BuildingSets</Tab>
             <Tab>RemoteControl</Tab>

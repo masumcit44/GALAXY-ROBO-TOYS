@@ -1,6 +1,8 @@
-import React from "react";
-import './GalleryCard.css'
+import React, { useEffect } from "react";
+import "./GalleryCard.css";
 import Gallery from "react-photo-gallery";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const GalleryCard = ({ gallery }) => {
   const { image, name } = gallery;
 
@@ -13,12 +15,21 @@ const GalleryCard = ({ gallery }) => {
     },
   ];
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="bg-base-100 gallery-card border border-gray-950 border-2 rounded">
+    <div
+      data-aos="fade-zoom-in"
+      data-aos-offset="200"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="600"
+      className="bg-base-100 gallery-card border border-gray-950 border-2 rounded"
+    >
       <Gallery photos={photos} />
     </div>
   );
 };
-
 
 export default GalleryCard;
