@@ -21,11 +21,11 @@ const GalleryCard = ({ gallery }) => {
 
   return (
     <div
-      data-aos="fade-zoom-in"
-      data-aos-offset="200"
-      data-aos-easing="ease-in-sine"
-      data-aos-duration="600"
-      className="bg-base-100 gallery-card border border-gray-950 border-2 rounded"
+      // data-aos="fade-zoom-in"
+      // data-aos-offset="200"
+      // data-aos-easing="ease-in-sine"
+      // data-aos-duration="1000"
+      className="bg-base-100 gallery-card  border-gray-950 border border-2 rounded mx-auto  p-2 "
     >
       <Gallery photos={photos} />
     </div>

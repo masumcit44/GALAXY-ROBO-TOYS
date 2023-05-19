@@ -1,9 +1,8 @@
 @media (max-width:576px) {
     .action-img{
-        width: 80vw;
+        width: 100vw;
     }
     .card-container{
-        width: 80vw;
-        margin-left: 20px;
+        width: 100vw;
     }
 }

@@ -18,9 +18,9 @@ const ShopByCatagory = () => {
       <h2 className="text-center md:text-6xl mb-2">
         Shop By <span className="text-orange-500 ">ROBO</span> Category
       </h2>
-      <div className="">
+      <div className="category-card">
         <Tabs selectedIndex={activeTab} onSelect={handleTabClick}>
-          <TabList className="text-3xl my-8 py-2 px-2 bg-blue-300">
+          <TabList className="md:text-3xl my-8 py-2 px-2 bg-blue-300">
             <Tab>ActionFigures</Tab>
             <Tab>BuildingSets</Tab>
             <Tab>RemoteControl</Tab>

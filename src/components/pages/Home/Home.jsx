@@ -7,7 +7,7 @@ import ShopByCatagory from "../ShopByCatagory/Container/ShopByCatagory";
 import { Helmet } from "react-helmet";
 const Home = () => {
   return (
-      <div className=" md:max-w-6xl  mx-auto">
+      <div className=" max-w-6xl mx-auto ">
         <Banner></Banner>
         <Gallery></Gallery>
         <ShopByCatagory></ShopByCatagory>

@@ -21,16 +21,13 @@ const Gallery = () => {
   }, []);
   return (
     <div
-      data-aos="fade-zoom-in"
-      data-aos-offset="200"
-      data-aos-easing="ease-in-sine"
-      data-aos-duration="600"
-      className="nav-design my-4 robo-gallery"
+      
+      className="nav-design my-4  "
     >
-      <h2 className="text-center text-6xl mb-2">
+      <h2 className="text-center md:text-6xl mb-2">
         Our <span className="text-orange-500">ROBO</span> Gallery
       </h2>
-      <div className="grid grid-cols-3 gap-2 items-center">
+      <div className="grid robo-gallery  md:grid-cols-3 gap-2 items-center">
         {gallery.map((card) => (
           <GalleryCard key={card._id} gallery={card}></GalleryCard>
         ))}

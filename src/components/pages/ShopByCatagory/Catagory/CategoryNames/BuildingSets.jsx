@@ -19,7 +19,7 @@ const BuildingSets = () => {
     }, []);
     const { _id } = BuildingSets;
     return (
-        <div className="md:grid grid-cols-2 gap-3 w-3/4 mx-auto">
+        <div className="grid md:grid-cols-3 gap-4  ">
         {BuildingSets.map((card) => (
           <ActionCard key={card._id} card={card}></ActionCard>
         ))}

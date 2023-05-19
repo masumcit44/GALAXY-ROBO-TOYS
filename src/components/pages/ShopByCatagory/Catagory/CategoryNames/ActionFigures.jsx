@@ -28,7 +28,7 @@ const ActionFigures = () => {
       data-aos-offset="200"
       data-aos-easing="ease-in-sine"
       data-aos-duration="600"
-      className="md:grid grid-cols-2 gap-3 md:w-3/4 md:mx-auto"
+      className="grid md:grid-cols-3  items-center gap-4   "
     >
       {actionFigures.map((card) => (
         <ActionCard key={card._id} card={card}></ActionCard>

@@ -19,7 +19,7 @@ const ActionCard = ({ card }) => {
   };
 
   return (
-    <div className="card   card-container md:w-96 bg-base-100 shadow-xl">
+    <div className="card  card-container md:w-96 bg-base-100 shadow-xl">
       <figure>
         <img className="h-80 action-img md:w-full" src={image} alt="Shoes" />
       </figure>

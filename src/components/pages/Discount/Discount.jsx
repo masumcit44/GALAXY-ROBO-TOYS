@@ -15,8 +15,8 @@ const Discount = () => {
     
     return (
         <div className='nav-design my-5 '>
-            <h1 className='text-center text-5xl my-4 '>Get up to 40% discount </h1>
-            <div className='md:grid grid-cols-4 gap-2'>
+            <h1 className='text-center md:text-5xl my-4 '>Get up to 40% discount </h1>
+            <div className='grid md:grid-cols-4 gap-2'>
             {
                 discount.map(card=><DiscountCard
                 key={card._id}

@@ -1,5 +1,6 @@
 @media (max-width: 576px) {
-  .responsive-tabs-container {
+  .category-card{
     width: 100vw;
+    /* margin: 0 auto; */
   }
 }
