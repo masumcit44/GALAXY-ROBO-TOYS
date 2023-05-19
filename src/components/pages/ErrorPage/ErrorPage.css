@@ -1,6 +1,13 @@
 .error-page {
   background-image: url("error.png");
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   min-height: 100vh;
+  position: relative;
+
+}
+.back{
+  position: absolute;
+  top: 15px;
+  left: 15px ;
 }
