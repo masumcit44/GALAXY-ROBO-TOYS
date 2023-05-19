@@ -16,6 +16,8 @@ import RemoteControl from './components/pages/ShopByCatagory/Catagory/CategoryNa
 import BuildingSets from './components/pages/ShopByCatagory/Catagory/CategoryNames/BuildingSets';
 import Blog from './components/pages/Blog/Blog';
 import AllToys from './components/pages/AllToys/AllToys';
+import ToyDetails from './components/pages/ToyDetails/ToyDetails';
+import PrivateRoute from './components/routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
       {
         path:'/alltoys',
         element: <AllToys></AllToys>
+      },
+      {
+        path:'/toydetails/:id',
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
       },
       {
         path:'/login',

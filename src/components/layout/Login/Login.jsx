@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGooglePlus } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
   const { googleLogin, signIn } = useContext(AuthContext);
   const [error,setError] = useState('')
+
+  const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state.from.pathname || '/' 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,6 +23,7 @@ const Login = () => {
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
+        navigate(from,  {  replace : true })
       })
       .catch((error) => {
          setError(error)
@@ -27,6 +33,7 @@ const Login = () => {
     googleLogin()
       .then((res) => {
         console.log(res.user);
+        navigate(from,  {  replace : true })
       })
       .catch((error) => {
         setError(error)
