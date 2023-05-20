@@ -17,7 +17,7 @@ const Brand = () => {
 
     const [brands,setBrands] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/brands')
+        fetch('https://toy-galaxy-assignment-11-server.vercel.app/brands')
         .then(res=>res.json())
         .then(data=>{
             setBrands(data)

@@ -7,7 +7,7 @@ const ToyDetails = () => {
   const id = useParams().id;
   const [toy, setToy] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoys/${id}`)
+    fetch(`https://toy-galaxy-assignment-11-server.vercel.app/alltoys/${id}`)
       .then((res) => {
         toast.info("Loading toy details...", { autoClose: 1000 });
         return res.json();

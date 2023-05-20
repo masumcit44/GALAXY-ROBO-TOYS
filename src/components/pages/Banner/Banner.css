@@ -1,5 +1,5 @@
 .banner-backgroud {
-  background-image: url("public/banner/robo-3.jpg");
+  background-image: url("/banner/robo-3.jpg");
   background-size: cover;
   background-position: center;
   min-height: 85vh;

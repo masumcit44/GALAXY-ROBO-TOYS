@@ -9,9 +9,9 @@ import "aos/dist/aos.css";
 const ActionFigures = () => {
   const [actionFigures, setActionFigures] = useState([]);
   useEffect(() => {
-    AOS.init();
+    // AOS.init();
 
-    const url = "http://localhost:5000/alltoys?category=ActionFigures";
+    const url = "https://toy-galaxy-assignment-11-server.vercel.app/alltoys?category=ActionFigures";
     fetch(url)
       .then((res) => {
         return res.json();

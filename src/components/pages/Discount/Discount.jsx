@@ -6,7 +6,7 @@ const Discount = () => {
 
     const [discount,setDiscount] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/discount')
+        fetch('https://toy-galaxy-assignment-11-server.vercel.app/discount')
         .then(res=>res.json())
         .then(data=>{
             setDiscount(data)

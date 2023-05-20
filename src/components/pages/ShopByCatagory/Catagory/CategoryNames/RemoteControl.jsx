@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const RemoteControl = () => {
   const [RemoteControl, setRemoteControl] = useState([]);
   useEffect(() => {
-    const url = "http://localhost:5000/alltoys?category=RemoteControl";
+    const url = "https://toy-galaxy-assignment-11-server.vercel.app/alltoys?category=RemoteControl";
     fetch(url)
     .then(res=>{
       toast.info('Loading remote control toys...', { autoClose: 1000 });

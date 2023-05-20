@@ -1,13 +1,12 @@
 .error-page {
-  background-image: url("error.png");
+  background-image: url("https://media.istockphoto.com/id/1067573454/photo/3d-word-oops.jpg?s=612x612&w=0&k=20&c=rHOITFpXAABlNpNAsZeoRzEPaDcx-Cv2_3xyFppjS3s=");
   background-size: cover;
   /* background-position: center; */
   min-height: 100vh;
   position: relative;
-
 }
-.back{
+.back {
   position: absolute;
   top: 15px;
-  left: 15px ;
+  left: 15px;
 }

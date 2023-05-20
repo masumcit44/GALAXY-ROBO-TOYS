@@ -4,13 +4,13 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import GalleryCard from "../GalleryCard/GalleryCard";
 import AOS from "aos";
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 import "./Gallery.css";
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   useEffect(() => {
     AOS.init();
-    fetch("http://localhost:5000/catagoryrobo")
+    fetch("https://toy-galaxy-assignment-11-server.vercel.app/catagoryrobo")
       .then((res) => {
         toast.info("Loading toys...", { autoClose: 1000 });
         return res.json();
@@ -20,11 +20,11 @@ const Gallery = () => {
       });
   }, []);
   return (
-    <div className="nav-design my-4  ">
+    <div className="nav-design my-4   ">
       <h2 className="text-center md:text-6xl my-6  ">
         Our <span className="text-orange-500">ROBO</span> Gallery
       </h2>
-      <div className="grid robo-gallery  md:grid-cols-3 gap-2 items-center">
+      <div className="grid robo-gallery  overflow-hidden  md:grid-cols-3 gap-2 items-center">
         {gallery.map((card) => (
           <GalleryCard key={card._id} gallery={card}></GalleryCard>
         ))}

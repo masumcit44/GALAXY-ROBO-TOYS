@@ -25,7 +25,7 @@ const GalleryCard = ({ gallery }) => {
       data-aos-offset="200"
       data-aos-easing="ease-in-sine"
       data-aos-duration="0"
-      className="bg-base-100  border-gray-950 border border-2 rounded mx-auto  p-2 sm:animate-slide-in "
+      className="bg-base-100 overflow-hidden  border-gray-950 border border-2 rounded mx-auto  p-2  "
     >
       <Gallery photos={photos} />
     </div>

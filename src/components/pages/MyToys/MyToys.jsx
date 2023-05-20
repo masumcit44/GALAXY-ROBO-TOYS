@@ -18,7 +18,7 @@ const MyToys = () => {
     buttonsStyling: false,
   });
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoys?email=${user?.email}`)
+    fetch(`https://toy-galaxy-assignment-11-server.vercel.app/alltoys?email=${user?.email}`)
       .then((res) => {
         toast.info("Loading your toys...", { autoClose: 2000 }); // Show the spinner
         return res.json();
@@ -47,7 +47,7 @@ const MyToys = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/alltoys/${id}`, {
+          fetch(`https://toy-galaxy-assignment-11-server.vercel.app/alltoys/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -87,7 +87,7 @@ const MyToys = () => {
       quantity,
     };
 
-    fetch(`http://localhost:5000/allToys/${updateId}`, {
+    fetch(`https://toy-galaxy-assignment-11-server.vercel.app/allToys/${updateId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -116,7 +116,7 @@ const MyToys = () => {
   }
 
   const handleAccending = (sort) => {
-    fetch(`http://localhost:5000/mytoys?sort=${sort}&&email=${user?.email}`)
+    fetch(`https://toy-galaxy-assignment-11-server.vercel.app/mytoys?sort=${sort}&&email=${user?.email}`)
       .then((res) => {
         toast.info("Loading your toys...", { autoClose: 2000 }); // Show the spinner
         return res.json();
@@ -139,13 +139,13 @@ const MyToys = () => {
             <th>Quantity</th>
             <th className="flex justify-around">
               <button
-                onClick={() => handleAccending(1)}
+                onClick={() => handleAccending(-1)}
                 className="btn btn-sm bg-purple-600 mr-2"
               >
                 Ascending{" "}
               </button>
               <button
-                onClick={() => handleAccending(-1)}
+                onClick={() => handleAccending(1)}
                 className="btn bg-green-400 btn-sm"
               >
                 Descending
@@ -211,7 +211,7 @@ const MyToys = () => {
                       type="submit"
                       htmlFor="my-modal-6"
                       className="btn"
-                      value="updated!"
+                      value="update"
                     />
                   </div>
                 </div>

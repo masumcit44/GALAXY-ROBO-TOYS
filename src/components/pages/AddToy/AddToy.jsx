@@ -32,7 +32,7 @@ const AddToy = () => {
       quantity
     };
 
-    fetch("http://localhost:5000/allToys", {
+    fetch("https://toy-galaxy-assignment-11-server.vercel.app/allToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -58,6 +58,7 @@ const AddToy = () => {
           </label>
           <input
             type="text"
+            required
             placeholder="PhotoURL"
             name="url"
             className="input input-bordered"
@@ -68,7 +69,8 @@ const AddToy = () => {
             <span className="label-text">Toy Name</span>
           </label>
           <input
-            type="text"
+            type="text"required
+
             placeholder="Toy Name"
             name="name"
             className="input input-bordered"
@@ -114,6 +116,7 @@ const AddToy = () => {
           </label>
           <input
             type="text"
+            required
             placeholder="$"
             name="price"
             className="input input-bordered"
@@ -125,6 +128,7 @@ const AddToy = () => {
           </label>
           <input
             type="text"
+            required
             placeholder="rating"
             name="Rating"
             className="input input-bordered"
@@ -136,6 +140,7 @@ const AddToy = () => {
           </label>
           <input
             type="text"
+            required
             placeholder="Available quantity"
             name="quantity"
             className="input input-bordered"
@@ -147,6 +152,7 @@ const AddToy = () => {
           </label>
           <textarea
             type="text"
+            required
             placeholder="Detail description"
             name="detail"
             className="input input-bordered resize-none"

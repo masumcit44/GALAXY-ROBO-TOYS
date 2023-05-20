@@ -56,7 +56,7 @@ const Navbar = () => {
               )}
           </ul>
         </div>
-        <a className="btn btn-ghost nav-heading normal-case galaxy  font-bold md:text-2xl">
+        <a className="btn btn-ghost nav-heading normal-case galaxy  font-bold md:text-2xl bg-yellow-100">
           <img className="w-12 h-12" src={logo} alt="" />{" "}
           <p className="ms-2 robo">GALAXY ROBO TOYS</p>{" "}
         </a>
@@ -73,7 +73,6 @@ const Navbar = () => {
           <li>
             <Link to="/blog"> Blogs</Link>
           </li>
-          <li>
             {user ? (
               <>
                 <li>
@@ -86,7 +85,6 @@ const Navbar = () => {
             ) : (
               <></>
             )}
-          </li>
         </ul>
       </div>
       <div className=" navbar-end ">

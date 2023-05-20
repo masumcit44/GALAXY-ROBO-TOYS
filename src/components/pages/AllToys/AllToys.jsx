@@ -8,7 +8,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys?limit=20")
+    fetch("https://toy-galaxy-assignment-11-server.vercel.app/alltoys?limit=20")
       .then((res) => {
         toast.info('Loading toys...', { autoClose: 1000 });
         return res.json();
