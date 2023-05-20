@@ -43,13 +43,7 @@ const AddToy = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          Swal.fire({
-            position: "top-right",
-            icon: "success",
-            title: "Toy has been added",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          Swal.fire('toy added successfully')
         }
       });
   };

@@ -20,7 +20,7 @@ const ShopByCatagory = () => {
       </h2>
       <div className="category-card">
         <Tabs selectedIndex={activeTab} onSelect={handleTabClick}>
-          <TabList className="md:text-3xl my-8 py-2 px-2 bg-blue-300">
+          <TabList className="md:text-3xl simple-text my-8 py-2 px-2 bg-gradient-to-r from-blue-400 to-purple-500">
             <Tab>ActionFigures</Tab>
             <Tab>BuildingSets</Tab>
             <Tab>RemoteControl</Tab>

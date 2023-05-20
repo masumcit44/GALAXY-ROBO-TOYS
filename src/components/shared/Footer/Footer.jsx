@@ -1,39 +1,40 @@
 import React from "react";
 import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaSms,
-  FaFortAwesomeAlt,
+
+  FaSms
 } from "react-icons/fa";
 import './Footer.css'
+import logo from '../../../assets/icon/icon-2.avif'
+import fb from '../../../assets/icon/facebook.avif'
+import ins from '../../../assets/icon/insta.png'
+import yt from '../../../assets/icon/yt.avif'
+import twi from '../../../assets/icon/twit.png'
 const Footer = () => {
   return (
-    <div className="md:flex justify-between p-5 footer bg-gradient-to-r from-purple-500 to-red-600 text-white nav-design">
+    <div className="md:flex justify-between p-5 footer bg-gradient-to-r from-purple-500 to-red-600 text-white galaxy">
       <div>
-        <div className="text-2xl flex items-center text-black">
-          <FaFortAwesomeAlt></FaFortAwesomeAlt>
-          <p className="ms-2">GALAXY ROBO TOYS</p>
+        <div className=" text-2xl flex items-center text-gray-900 ">
+          <img className="w-12 h-12" src={logo} alt="" />
+          <p className="ms-2 text-blue-900">GALAXY ROBO TOYS</p>
         </div>
-        <ul className="ps-2 flex gap-2 text-xl">
+        <ul className="ps-2 flex items-center gap-2 text-xl">
           <li>
-            <FaFacebook></FaFacebook>
+          <img className="w-8 h-8" src={fb} alt="" />
           </li>
           <li>
-            <FaTwitter></FaTwitter>
+          <img className="w-8 h-8" src={ins} alt="" />
           </li>
           <li>
-            <FaInstagram></FaInstagram>
+          <img className="w-8 h-8" src={twi} alt="" />
           </li>
           <li>
-            <FaYoutube></FaYoutube>
+          <img className="w-8 h-8" src={yt} alt="" />
           </li>
         </ul>
       </div>
       <div>
-        <h2 className="text-2xl text-black">Support</h2>
-        <ul className="ps-2">
+        <h2 className="text-3xl text-black">Support</h2>
+        <ul className="ps-2 text-xl">
           <li>contact us</li>
           <li>FAQ</li>
           <li>Downloads</li>
@@ -42,8 +43,8 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <h2 className="text-2xl text-black">GALAXY ROBO TOYS</h2>
-        <ul className="ps-2">
+        <h2 className="text-3xl text-black">GALAXY ROBO TOYS</h2>
+        <ul className="ps-2 text-xl">
           <li>about GALAXY ROBO TOYS</li>
           <li>careers</li>
           <li>license</li>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGooglePlus } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -8,7 +8,11 @@ import { useState } from "react";
 const Register = () => {
     const { googleLogin, signUp } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/' 
   const handleLogin = (event) => {
+    setError("")
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -16,29 +20,32 @@ const Register = () => {
     const url = form.url.value;
     const password = form.password.value;
     console.log(email, password);
-
+    
     signUp(email, password)
       .then((res) => {
         console.log(res.user);
         res.user.displayName = name;
         res.user.photoURL = url;
+        navigate(from,  {  replace : true })
       })
       .catch((error) => {
         setError(error);
       });
   };
   const handleGoogleSignIn = () => {
+    setError("")
     googleLogin()
       .then((res) => {
         console.log(res.user);
+        navigate(from,  {  replace : true })
       })
       .catch((error) => {
         setError(error);
       });
   };
   return (
-    <div className="flex items-center h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-      <div className="w-1/2 mx-auto bg-zinc-100  p-5 ">
+    <div className="flex items-center h-screen bg-gradient-to-r from-amber-500 via-green-100 to-red-300">
+      <div className="w-1/2 mx-auto rounded-md bg-zinc-100  p-5 ">
         <form onSubmit={handleLogin} className="">
           <div className="form-control   ">
             <h2 className="text-4xl font-bold text-center">Sign Up Here</h2>
@@ -69,7 +76,7 @@ const Register = () => {
               <span className="label-text">Password</span>
             </label>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               name="password"
               className="input input-bordered"
@@ -87,8 +94,8 @@ const Register = () => {
             />
             <p className="text-end my-2">
               already have an account?{" "}
-              <Link to="/login" className="text-orange-600 ">
-                Sign In{" "}
+              <Link to="/login" className="underline text-orange-600 ">
+                Log In{" "}
               </Link>
             </p>
             <p className="text-center text-red-600 font-bold">

@@ -6,7 +6,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 const ActionFigures = () => {
   const [actionFigures, setActionFigures] = useState([]);
   useEffect(() => {
@@ -28,7 +27,7 @@ const ActionFigures = () => {
       data-aos-offset="200"
       data-aos-easing="ease-in-sine"
       data-aos-duration="600"
-      className="grid md:grid-cols-3  items-center gap-4   "
+      className="grid  md:grid-cols-3  items-center gap-4   "
     >
       {actionFigures.map((card) => (
         <ActionCard key={card._id} card={card}></ActionCard>

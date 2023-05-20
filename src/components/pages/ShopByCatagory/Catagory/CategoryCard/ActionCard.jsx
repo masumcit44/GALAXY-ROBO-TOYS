@@ -19,22 +19,22 @@ const ActionCard = ({ card }) => {
   };
 
   return (
-    <div className="card  card-container md:w-96 bg-base-100 shadow-xl">
+    <div className="card  card-container rounded-lg border-2 border-black ">
       <figure>
         <img className="h-80 action-img md:w-full" src={image} alt="Shoes" />
       </figure>
-      <div className="card-body">
+      <div className="card-body simple-text rounded-xl bg-purple-100">
         <h2 className="card-title">{name}</h2>
-        <p className="">price: {price} </p>
-        <div className="flex  items-center">
+        <p className="text-base">Price: {price} </p>
+        <div className="flex  text-base items-center">
           {" "}
-          <p className="flex-grow-0">rating:</p>{" "}
+          <p className="flex-grow-0">Rating:</p>{" "}
           <Rating disabled style={{ maxWidth: 150 }} value={rating} readOnly />{" "}
         </div>
         <div className="card-actions justify-end">
           {user ? (
             <Link to={`/toydetails/${_id}`}>
-              <button className="btn btn-primary">View Details button</button>
+              <button className="btn btn-error">View Details button</button>
             </Link>
           ) : (
             <button onClick={handleNotLogin} className="btn btn-primary">

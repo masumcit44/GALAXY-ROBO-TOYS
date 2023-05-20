@@ -27,7 +27,7 @@ const Brand = () => {
     console.log();
   return (
     <div className="my-5">
-        <h2 className="text-center md:text-5xl my-2 nav-design">Our <span className="text-orange-500">ROBO</span> Brands</h2>
+        <h2 className="text-center md:text-5xl my-6 nav-design">Our <span className="text-orange-500">ROBO</span> Brands</h2>
       <Swiper
         effect={"cards"}
         grabCursor={true}

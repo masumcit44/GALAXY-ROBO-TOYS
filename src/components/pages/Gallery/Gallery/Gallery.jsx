@@ -20,11 +20,8 @@ const Gallery = () => {
       });
   }, []);
   return (
-    <div
-      
-      className="nav-design my-4  "
-    >
-      <h2 className="text-center md:text-6xl mb-2">
+    <div className="nav-design my-4  ">
+      <h2 className="text-center md:text-6xl my-6  ">
         Our <span className="text-orange-500">ROBO</span> Gallery
       </h2>
       <div className="grid robo-gallery  md:grid-cols-3 gap-2 items-center">

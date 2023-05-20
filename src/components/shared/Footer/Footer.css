@@ -1,3 +1,8 @@
+.galaxy{
+  font-family: 'Bangers', cursive;
+}
+
+
 @media (max-width: 576px) {
   .footer {
     width: 100vw;

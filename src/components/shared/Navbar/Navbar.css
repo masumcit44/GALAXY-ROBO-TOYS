@@ -8,6 +8,17 @@
   font-family: "Oswald", sans-serif;
 }
 
+.robo{
+  font-family: 'Bangers', cursive;
+font-family: 'Smokum', cursive;
+}
+
+.nav-link-a{
+  font-family: 'Bangers', cursive;
+font-family: 'Lilita One', cursive;
+font-family: 'Smokum', cursive;
+}
+
 @media (max-width: 576px) {
   .nav-btn {
     padding: 0;

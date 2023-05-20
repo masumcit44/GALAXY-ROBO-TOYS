@@ -12,7 +12,7 @@ const MyToys = () => {
   //   console.log(user?.email);
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
-      confirmButton: "btn btn-success",
+      confirmButton: " btn ms-2 btn-success",
       cancelButton: "btn btn-danger",
     },
     buttonsStyling: false,
@@ -105,13 +105,7 @@ const MyToys = () => {
         updated.quantity = quantity;
         if (data.modifiedCount > 0) {
           setMyToys(updatedToy);
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your work has been saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          Swal.fire('Updated')
           setShowModal(false);
         }
       });
@@ -217,7 +211,7 @@ const MyToys = () => {
                       type="submit"
                       htmlFor="my-modal-6"
                       className="btn"
-                      value="Yay!"
+                      value="updated!"
                     />
                   </div>
                 </div>

@@ -10,6 +10,45 @@
   right: 200px;
   top: 150px;
 }
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+.slow-animation {
+  animation: move 8s linear infinite;
+}
+
+
+@keyframes crazy-animation {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(100px) rotate(45deg);
+  }
+  50% {
+    transform: translateX(0) rotate(0deg);
+  }
+  75% {
+    transform: translateX(-100px) rotate(-45deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.crazy-animation span {
+  display: inline-block;
+  animation: crazy-animation 3s ease-in-out infinite;
+}
+
+
 @media (max-width: 576px) {
   .banner-backgroud {
     width: 100%;
@@ -18,7 +57,7 @@
   }
   .banner-inner-text {
     position: absolute;
-    right: 80px;
+    right: 100px;
     top: 50px;
   }
 }

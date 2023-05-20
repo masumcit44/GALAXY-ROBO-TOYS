@@ -11,10 +11,10 @@ const DiscountCard = ({ card }) => {
           className="discount-img mx-auto"
         />
         <p className="bg-red-600 text-amber-100 discount-price rounded-sm p-2">  -{discount}</p>
-      <div className="card-body p-2 mb-0 items-center text-center">
+      <div className="card-body p-2 mb-0 simple-text items-center text-center">
         <h2 className="card-title">Product name : {name}</h2>
         <p>Category : {category}</p>
-        <p className="text-xl">price: <span className="line-through text-red-400 line-thick">{price}</span> <span>{discountedPrice}</span></p>
+        <p className="text-xl">price: <span className="line-through text-red-600 line-thick">{price}</span> <span>{discountedPrice}</span></p>
         <div className="card-actions">
           <button className="btn btn-primary">Buy Now</button>
         </div>

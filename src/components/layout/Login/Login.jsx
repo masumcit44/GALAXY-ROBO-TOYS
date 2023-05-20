@@ -41,8 +41,8 @@ const Login = () => {
      });
   };
   return (
-    <div className="flex items-center h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-      <div className="w-1/2 mx-auto bg-zinc-100  p-5 ">
+    <div className="flex  items-center h-screen bg-gradient-to-r from-amber-500 via-green-100 to-red-300">
+      <div className="w-1/2 mx-auto rounded-md bg-zinc-100  p-5 ">
         <form
           onSubmit={handleLogin}
           className=''
@@ -64,14 +64,14 @@ const Login = () => {
               <span className="label-text">Password</span>
             </label>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               name="password"
               className="input input-bordered"
             />
             <p className="text-end mt-2">
               new here?{" "}
-              <Link to="/register" className="text-orange-600 ">
+              <Link to="/register" className="text-orange-600 underline  ">
                 Sign up{" "}
               </Link>
             </p>
