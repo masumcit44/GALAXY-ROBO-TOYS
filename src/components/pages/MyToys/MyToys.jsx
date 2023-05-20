@@ -139,13 +139,13 @@ const MyToys = () => {
             <th>Quantity</th>
             <th className="flex justify-around">
               <button
-                onClick={() => handleAccending(-1)}
+                onClick={() => handleAccending(1)}
                 className="btn btn-sm bg-purple-600 mr-2"
               >
                 Ascending{" "}
               </button>
               <button
-                onClick={() => handleAccending(1)}
+                onClick={() => handleAccending(-1)}
                 className="btn bg-green-400 btn-sm"
               >
                 Descending
